@@ -1,0 +1,128 @@
+"" Source your .vimrc
+"source ~/.vimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+set showmode ruler
+set showcmd
+set smartcase
+set timeoutlen=350
+
+" Do incremental searching.
+set incsearch hlsearch
+
+set ignorecase
+set number relativenumber
+
+set so=5
+set ideajoin
+
+" set ideastatusicon=gray
+" """"""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""Plugin"""""""""""""""""""""
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set ReplaceWithRegister
+set matchit
+set highlightedyank
+set NERDTree
+set easymotion
+set sneak
+set exchange
+set clipboard+=ideaput
+
+set ideamarks
+
+let g:highlightedyank_highlight_duration = '300'
+let g:highlightedyank_highlight_color = 'rbg(160, 160, 160, 155)'
+nnoremap <Leader>n :action SelectInProjectView<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+" Don't use Ex mode, use Q for formatting.
+nnoremap Q :q<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = "\<space>""
+
+nnoremap U <C-R>
+inoremap <C-V> <C-R>*
+nnoremap 0 ^
+nnoremap == :action ReformatCode<CR>
+" nnoremap == gg=G<C-o>
+
+inoremap jk <esc>
+nnoremap <leader>w :vsp<CR>
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap g<tab> <C-S-6><CR>
+" nnoremap <leader>gf :action GotoFile<CR>
+nnoremap gr :action ShowUsages<CR>
+nnoremap <leader>u :action ShowUsages<CR>
+nnoremap <A-u> :action FindUsages<CR>
+" nnoremap <leader>f :action FindInPath<CR>
+" nnoremap <leader>u :action FindUsages<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap K :action QuickJavaDoc<CR>
+inoremap <C-P> :action ParameterInfo<CR>
+
+sethandler <C-F> a:ide
+sethandler <C-H> a:vim
+sethandler <C-J> a:vim
+sethandler <C-K> a:vim
+sethandler <C-L> a:vim
+sethandler <C-O> a:vim
+sethandler <C-S> a:vim
+sethandler <C-V> a:vim
+sethandler <C-c> a:ide
+sethandler <C-A> a:vim
+sethandler <C-N> a:vim
+sethandler <C-P> a:vim
+sethandler <C-Q> a:vim
+
+"""""""""""""""""""RUN"""""""""""""""""""""
+nnoremap rb :action Rebuild<CR>
+" nnoremap bb :action Build<CR>
+nnoremap bb :action Rust.Build<CR>
+nnoremap cl :action Clean<CR>
+nnoremap db :action Debug<CR>
+nnoremap br :action Run<CR>
+nnoremap ra :action RunCOnfiguration<CR>
+
+nnoremap bp :action ToggleLineBreakpoint<CR>
+
+"""""""""""""""""""JUMP"""""""""""""""""""""
+" nnoremap <leader>fp :action FindInPath<CR>
+" nnoremap <c-p> :action GotoFile<CR>
+nnoremap gf :action GotoFile<CR>
+nnoremap gs :action GotoSymbol<CR>
+nnoremap gS :action FileStructurePopup<CR>
+nnoremap <leader>n :action SelectInProjectView<CR>
+" nnoremap <leader>ss :action FileStructurePopup<CR>
+
+"""""""""""""""""""LSP""""""""""""""""""
+
+"""""""""""""""""""Windows"""""""""""""""""""""
+nnoremap sf :action ShowFilePath<CR>
+nnoremap te :action ActivateTerminalToolWindow<CR>
+nnoremap hw :action HideActiveWindow<CR>
+
+
+"""""""""""""""""""EasyMotion""""""""""""""""""
+nmap <Leader>j <Plug>(easymotion-j)
+
+nmap <Leader>k <Plug>(easymotion-k)
+
+nmap <Leader>s <Plug>(easymotion-s)
+nmap <Leader>f <Plug>(easymotion-f)
+
+set keep-english-in-normal
