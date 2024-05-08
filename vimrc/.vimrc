@@ -241,6 +241,14 @@ let g:Lf_Gtagslabel = 'native-pygments'
 " fzf
 " }}}
 
+
+""""""""""""""""""""markdown preview""""""""""""""""" {{{
+let g:mkdp_browser = 'chromium'
+
+" markdown preview
+" }}}
+
 """""""""""""""""""""Tip""""""""""""""""""""""
 " :g/^$\n^$/d
 " leader ww vim wiki
+" :MarkdownPreview/:MarkdownPreviewStop
