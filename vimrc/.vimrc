@@ -243,4 +243,4 @@ let g:Lf_Gtagslabel = 'native-pygments'
 
 """""""""""""""""""""Tip""""""""""""""""""""""
 " :g/^$\n^$/d
-"
+" leader ww vim wiki
