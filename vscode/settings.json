@@ -1,0 +1,86 @@
+{
+  "editor.semanticHighlighting.enabled": true,
+  "editor.lineNumbers": "relative",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": false,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.vimrc.enable": false,
+  "vim.highlightedyank.enable": true,
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.handleKeys": {
+    "<C-a>": true,
+    "<C-x>": true,
+    "<C-f>": false,
+    "<C-k>": true
+  },
+  "vim.insertModeKeyBindings": [{ "before": ["j", "k"], "after": ["<Esc>"] }],
+  "vim.normalModeKeyBindings": [
+    { "before": ["g", "f"], "commands": ["workbench.action.quickOpen"] },
+    { "before": ["g", "s"], "commands": ["workbench.action.gotoSymbol"] },
+    {
+      "before": ["leader", "u"],
+      "commands": ["references-view.findReferences"]
+    },
+    { "before": ["0"], "after": ["^"] },
+    { "before": ["U"], "after": ["C-r"] },
+    {
+      "before": ["t", "e"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
+    },
+    { "before": ["leader", "n"], "commands": ["workbench.view.explorer"] },
+    { "before": ["leader", "f"], "after": ["leader", "leader", "2", "f"] },
+    { "before": ["leader", "s"], "after": ["leader", "leader", "2", "s"] },
+    { "before": ["b", "b"], "commands": ["workbench.action.debug.build"] },
+    { "before": ["b", "r"], "commands": ["workbench.action.debug.start"] }
+  ],
+
+  "workbench.colorTheme": "Penumbra Dark",
+  "window.zoomLevel": 1,
+  "[c]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  // clangd
+  "clangd.arguments": [
+    "--compile-commands-dir=${workspaceFolder}/build",
+    "--background-index"
+  ],
+  "clangd.checkUpdates": true, // 自动检测 clangd 更新
+  "clangd.onConfigChanged": "restart", // 重启 clangd 时重载配置,具体方法: F1 + Fn 打开命令面板，然后搜索“clangd: restart”
+  "clangd.serverCompletionRanking": true, // 借助网上的信息排序建议
+  "clangd.detectExtensionConflicts": true, // 当其它拓展与 clangd 冲突时警告并建议禁用
+  "editor.suggest.snippetsPreventQuickSuggestions": false, // clangd的snippets有很多的跳转点，不用这个就必须手动触发Intellisense了
+  //
+  "cmake.allowUnsupportedPresetsVersions": true,
+  //
+  // [[LLDB]]
+  //
+  "lldb.commandCompletions": true, // LLDB 指令自动补全
+  "lldb.dereferencePointers": true, // LLDB 指针显示解引用内容
+  "lldb.evaluateForHovers": true, // LLDB 鼠标悬停在变量上时预览变量值
+  "lldb.launch.expressions": "native", // LLDB 监视表达式的默认类型
+  "lldb.showDisassembly": "never", // LLDB 不显示汇编代码
+  "lldb.verboseLogging": true,
+  "clangd.path": "/home/end/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "editor.fontSize": 15,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "rust-analyzer.cargo.buildScripts.overrideCommand": null,
+  "cmake.configureOnOpen": true,
+  "[cpp]": {
+    "editor.defaultFormatter": "seaube.clangformat"
+  },
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ] // LLDB 生成更详细的日志
+}
