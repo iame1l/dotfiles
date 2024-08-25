@@ -91,7 +91,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 
 " statusline
 Plug 'itchyny/lightline.vim'
@@ -107,9 +107,9 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'rust-lang/rust.vim'
 
 " fuzzy finder
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
 " color scheme
 Plug 'morhetz/gruvbox'
@@ -226,19 +226,20 @@ augroup END
 
 """"""""""""""""""""fuzzy finder""""""""""""""""" {{{
 " leaderF
-let g:Lf_WindowPosition = 'popup'
-let g:Lf_PreviewInPopup=1
-nnoremap <c-n> :LeaderfMru<cr>
-" let g:Lf_ShortcutF = '<leader><leader>F'
-" let g:Lf_ShortcutF = '<C-P>'
-nnoremap gf :Leaderf file<CR>
-" nnoremap <leader>f :Leaderf file<CR>
-nnoremap <leader>t :Leaderf gtags<CR>
-nnoremap <leader>rg :Leaderf rg<CR>
-let g:Lf_ShortcutB = '<m-n>'
-let g:Lf_Gtagslabel = 'native-pygments'
+" let g:Lf_WindowPosition = 'popup'
+" let g:Lf_PreviewInPopup=1
+" nnoremap <c-n> :LeaderfMru<cr>
+" " let g:Lf_ShortcutF = '<leader><leader>F'
+" " let g:Lf_ShortcutF = '<C-P>'
+" nnoremap gf :Leaderf file<CR>
+" " nnoremap <leader>f :Leaderf file<CR>
+" nnoremap <leader>t :Leaderf gtags<CR>
+" nnoremap <leader>rg :Leaderf rg<CR>
+" let g:Lf_ShortcutB = '<m-n>'
+" let g:Lf_Gtagslabel = 'native-pygments'
 
 " fzf
+nnoremap gf :GFiles<CR>
 " }}}
 
 
