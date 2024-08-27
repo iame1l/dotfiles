@@ -26,8 +26,8 @@
     { "before": ["g", "f"], "commands": ["workbench.action.quickOpen"] },
     { "before": ["g", "s"], "commands": ["workbench.action.showAllSymbols"] },
     { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
-    { "before": ["h", "w"], "commands": ["workbench.action.toggleSidebarVisibility"] },
-    { "before": ["h", "t"], "commands": ["workbench.action.togglePanel"] },
+    { "before": ["leader", "h", "w"], "commands": ["workbench.action.toggleSidebarVisibility"] },
+    { "before": ["leader", "h", "p"], "commands": ["workbench.action.togglePanel"] },
     {
       "before": ["leader", "u"],
       "commands": ["references-view.findReferences"]
@@ -43,7 +43,8 @@
     { "before": ["leader", "n"], "commands": ["workbench.view.explorer"] },
     // { "before": ["leader", "n"], "commands": ["workbench.action.toggleSidebarVisibility"] },
     { "before": ["leader", "f"], "after": ["leader", "leader", "2", "f"] },
-    { "before": ["leader", "s"], "after": ["leader", "leader", "2", "s"] },
+    // { "before": ["leader", "s"], "after": ["leader", "leader", "2", "s"] },
+    { "before": ["s"], "after": ["leader", "leader", "2", "s"] },
     { "before": ["b", "b"], "commands": ["workbench.action.debug.build"] },
     { "before": ["b", "r"], "commands": ["workbench.action.debug.start"] }
   ],
@@ -90,5 +91,9 @@
   "workbench.colorTheme": "Penumbra Dark Contrast+",
   "[lua]": {
     "editor.defaultFormatter": "CppCXY.emmylua-codestyle"
-  }
+  },
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ]
 }

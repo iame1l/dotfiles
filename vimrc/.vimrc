@@ -171,7 +171,8 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
-nnoremap <Leader>s <Plug>(easymotion-overwin-f2)
+" nnoremap <Leader>s <Plug>(easymotion-overwin-f2)
+nnoremap s <Plug>(easymotion-overwin-f2)
 " or
 " `s{char}{char}{label}`
 " nnoremap <Leader>f <Plug>(easymotion-overwin-f2)
