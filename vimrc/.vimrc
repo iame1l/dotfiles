@@ -240,7 +240,7 @@ augroup END
 " let g:Lf_Gtagslabel = 'native-pygments'
 
 " fzf
-nnoremap gf :GFiles<CR>
+nnoremap gf :Files<CR>
 " }}}
 
 

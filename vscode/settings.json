@@ -26,8 +26,14 @@
     { "before": ["g", "f"], "commands": ["workbench.action.quickOpen"] },
     { "before": ["g", "s"], "commands": ["workbench.action.showAllSymbols"] },
     { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
-    { "before": ["leader", "h", "w"], "commands": ["workbench.action.toggleSidebarVisibility"] },
-    { "before": ["leader", "h", "p"], "commands": ["workbench.action.togglePanel"] },
+    {
+      "before": ["leader", "h", "w"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["leader", "h", "p"],
+      "commands": ["workbench.action.togglePanel"]
+    },
     {
       "before": ["leader", "u"],
       "commands": ["references-view.findReferences"]
@@ -54,7 +60,23 @@
   // clangd
   "clangd.arguments": [
     "--compile-commands-dir=${workspaceFolder}/build",
-    "--background-index"
+    "--background-index",
+
+    "--all-scopes-completion",
+    "--clang-tidy",
+    "--clang-tidy-checks=performance-*, bugprone-*, misc-*, google-*, modernize-*, readability-*, portability-*",
+    "--completion-parse=auto",
+    "--completion-style=detailed",
+    "--enable-config",
+    "--fallback-style=Google",
+    "--function-arg-placeholders=true",
+    "--header-insertion-decorators",
+    "--header-insertion=iwyu",
+    "--include-cleaner-stdlib",
+    "--log=verbose",
+    "--pch-storage=memory",
+    "--pretty",
+    "--ranking-model=decision_forest"
   ],
   "clangd.checkUpdates": false, // 自动检测 clangd 更新
   "clangd.onConfigChanged": "restart", // 重启 clangd 时重载配置,具体方法: F1 + Fn 打开命令面板，然后搜索“clangd: restart”
@@ -95,5 +117,6 @@
   "cmake.pinnedCommands": [
     "workbench.action.tasks.configureTaskRunner",
     "workbench.action.tasks.runTask"
-  ]
+  ],
+  "workbench.iconTheme": "vscode-icons"
 }
