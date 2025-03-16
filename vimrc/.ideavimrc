@@ -7,6 +7,7 @@
 set scrolloff=5
 set showmode ruler
 set showcmd
+set visualbell
 set smartcase
 set timeoutlen=350
 
@@ -73,13 +74,14 @@ nnoremap <A-u> :action FindUsages<CR>
 " nnoremap <leader>u :action FindUsages<CR>
 nnoremap <leader>rn :action RenameElement<CR>
 nnoremap K :action QuickJavaDoc<CR>
-inoremap <C-P> :action ParameterInfo<CR>
+" inoremap <C-P> :action ParameterInfo<CR>
 
 sethandler <C-F> a:ide
 sethandler <C-H> a:vim
 sethandler <C-J> a:vim
 sethandler <C-K> a:vim
 sethandler <C-L> a:vim
+sethandler <C-I> a:vim
 sethandler <C-O> a:vim
 sethandler <C-S> a:vim
 sethandler <C-V> a:vim
@@ -91,8 +93,8 @@ sethandler <C-Q> a:vim
 
 """""""""""""""""""RUN"""""""""""""""""""""
 nnoremap rb :action Rebuild<CR>
-" nnoremap bb :action Build<CR>
-nnoremap bb :action Rust.Build<CR>
+nnoremap bb :action Build<CR>
+" nnoremap bb :action Rust.Build<CR>
 nnoremap cl :action Clean<CR>
 nnoremap db :action Debug<CR>
 nnoremap br :action Run<CR>
